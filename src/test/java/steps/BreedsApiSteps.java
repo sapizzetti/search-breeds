@@ -66,4 +66,31 @@ public class BreedsApiSteps {
     public void the_response_should_contain_the_breed_name(String expectedBreedName) {
         response.then().body("data.breed", hasItem(expectedBreedName));
     }
+
+    @When("the user requests the endpoint with the limit parameter set to {int}")
+    public void theUserRequestsTheEndpointWithTheLimitParameterSetTo(int limit) {
+        response = RestAssured
+                .given()
+                .queryParam("limit", limit)
+                .when()
+                .get("/breeds");
+    }
+
+    @Then("the response must have the next page defined")
+    public void theResponseMustHaveTheNextPageDefined() {
+        response.then().assertThat()
+                .body("next_page_url", equalTo("https://catfact.ninja/breeds?page=2"));
+    }
+
+    @Then("the response should contain exactly {int} breeds")
+    public void theResponseShouldContainExactlyBreeds(int breedCount) {
+        response.then().assertThat()
+                .body("data.size()", is(breedCount));
+    }
+
+    @Then("the total records should be {int}")
+    public void theTotalRecordsShouldBe(int totalRecords) {
+        response.then().assertThat()
+                .body("total", equalTo(totalRecords));
+    }
 }
