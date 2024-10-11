@@ -53,17 +53,17 @@ public class BreedsApiSteps {
     }
 
     @Given("the breed name is {string}")
-    public void the_breed_name_is(String name) {
+    public void theBreedNameIs(String name) {
         this.breedName = name;
     }
 
     @When("the user makes a request to get the breed information")
-    public void the_user_makes_a_request_to_get_the_breed_information() {
+    public void theUserMakesARequestToGetTheBreedInformation() {
         response = RestAssured.get("https://catfact.ninja/breeds?limit=100&name=" + breedName);
     }
 
     @Then("the response should contain the breed name {string}")
-    public void the_response_should_contain_the_breed_name(String expectedBreedName) {
+    public void theResponseShouldContainTheBreedName(String expectedBreedName) {
         response.then().body("data.breed", hasItem(expectedBreedName));
     }
 
