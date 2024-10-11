@@ -1,18 +1,18 @@
 # Search breeds
 
-## Pré-requisitos
+## Prerequisites
 
-Antes de começar, certifique-se de ter as seguintes ferramentas instaladas:
+Before starting, make sure you have the following tools installed:
 
 ### SDKMAN!
 
-SDKMAN! é uma ferramenta para gerenciar versões paralelas de múltiplos kits de desenvolvimento de software no sistema Unix. Para instalar o SDKMAN!, execute o seguinte comando:
+SDKMAN! is a tool for managing parallel versions of multiple Software Development Kits on Unix systems. To install SDKMAN!, run the following command:
 
 ```bash
 curl -s "https://get.sdkman.io" | bash
 ```
 
-Após a instalação, reinicie o terminal ou execute:
+After the installation, restart the terminal or run:
 
 ```bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
@@ -20,7 +20,7 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 ### Java
 
-Com o SDKMAN! instalado, você pode instalar o Java 17 usando o seguinte comando:
+With SDKMAN! installed, you can install Java 17 using the following command:
 
 ```bash
 sdk install java 17.0.8-tem
@@ -28,18 +28,18 @@ sdk install java 17.0.8-tem
 
 ## Maven
 
-Para instalar o Maven, execute:
+To install Maven, run:
 
 ```bash
 sdk install maven
 ```
 
-## Instalação de dependências
+## Installing dependencies
 ```bash
 mvn clean install
 ```
 
-## Execução dos testes
+## Running the tests
 ```bash
 mvn clean verify
 ```

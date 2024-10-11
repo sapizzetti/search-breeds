@@ -6,8 +6,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import org.junit.Assert;
-
 import static org.hamcrest.Matchers.*;
 
 public class BreedsApiSteps {
