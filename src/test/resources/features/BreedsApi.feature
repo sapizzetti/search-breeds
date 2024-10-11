@@ -17,3 +17,9 @@ Feature: Test Breeds API
     Then the response should have status 200
     And the response should contain the breed name "Siamese"
 
+  Scenario: Validate pagination
+    Given the Breeds API is available
+    When the user requests the endpoint with the limit parameter set to 50
+    Then the response must have the next page defined
+    And the response should contain exactly 50 breeds
+    And the total records should be 98
